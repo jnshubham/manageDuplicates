@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Duplicate Data Manager</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap.min.css')}}" >
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='loader.css')}}" >
+    </head>
+    <body>
+        <div id="content" class="col-md-9">
+            <form method="POST" action="">
+                {{form.hidden_tag()}}
+                <div class="form-group row"></div>
+                <legend class="border-bottom mb-4">Duplicate Manager</legend>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Database:</label>
+                    <div class="col-sm-6">
+                        {{form.databaseName(class="form-control form-control-sm")}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Host:</label>
+                    <div class="col-sm-3">
+                        {{form.host(class="form-control form-control-sm")}}
+                    </div>
+                    <label class="col-sm-1 col-form-label">Port:</label>
+                    <div class="col-sm-2">
+                        {{form.port(class="form-control form-control-sm")}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">UserName:</label>
+                    <div class="col-sm-3">
+                        {{form.username(class="form-control form-control-sm")}}
+                    </div>
+                    <label class="col-sm-1 col-form-label">Password:</label>
+                    <div class="col-sm-2">
+                        {{form.password(class="form-control form-control-sm")}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Table Name:</label>
+                    <div class="col-sm-3">
+                        {{form.table(class="form-control form-control-sm")}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Primary Key:</label>
+                    <div class="col-sm-3">
+                        {{form.primaryKey(class="form-control form-control-sm")}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Output Directory:</label>
+                    <div class="col-sm-3">
+                        {{form.outputDirectory(class="form-control form-control-sm")}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Trigger:</label>
+                    <div class="col-sm-3">
+                        {{form.trigger(class="form-check")}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Columns to merge:</label>
+                    <div class="col-sm-6">
+                        {{form.columnsToMerge(class="form-control form-control-sm")}}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4">
+                        {{form.submit(class="btn btn-primary",onclick="$('#content').hide();$('#loading').show();")}}
+                    </div>
+                </div>
+
+            </form>
+            <div id="loading" class="loading"></div>
+        </div>
+       
+       
+    
+    <script src="{{url_for('static',filename='jquery-3.4.1.slim.min.js')}}"></script>
+    <script src="{{url_for('static',filename='popper.min.js')}}"></script>
+    <script src="{{url_for('static',filename='bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='jquery.min.js')}}"></script>
+
+    </body>
+
+</html>
